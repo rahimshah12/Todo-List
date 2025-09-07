@@ -7,29 +7,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="todo">
-    <!-- Header + Form -->
-    <header>
-      <h1>To-Do List</h1>
-      <form id="todo-form">
-        <label for="todo"></label>
-        <input type="text" id="todo" name="todo" placeholder="Enter a new task">
-        <button id="addtask"  type="submit">Add Task</button>
-      </form>
-    </header>
+  <header>
+    <h1>To-Do List</h1>
 
-    <!-- Tasks Section -->
-    <section class="tasks">
-      <!-- List of tasks -->
-      <ul id="task-list">
-        
-      </ul>
+    <!-- Task Input Section -->
+    <div class="task-input">
+      <input type="text" id="todo" placeholder="Enter a new task" disabled>
+      <button id="addtask" type="button" disabled>Add Task</button>
+    </div>
 
-      <!-- Empty state -->
-      <p id="empty-msg">No tasks yet. Add your first task!</p>
-    </section>
-  </main>
-  
+    <!-- Auth Section -->
+    <div class="auth-section">
+      <button id="google-signin">Sign in with Google</button>
+      <button id="google-signout" style="display:none;">Sign out</button>
+      <p id="user-info"></p>
+    </div>
+  </header>
+
+  <!-- Tasks Section -->
+  <section class="tasks">
+    <ul id="task-list"></ul>
+    <p id="empty-msg">No tasks yet. Add your first task!</p>
+  </section>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-auth-compat.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
